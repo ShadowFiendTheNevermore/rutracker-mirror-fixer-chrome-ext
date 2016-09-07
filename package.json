@@ -1,0 +1,19 @@
+{
+  "name": "chrome_extension_with_webpack",
+  "version": "0.0.1",
+  "description": "chrome extension template",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Author name",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.13.2",
+    "css-loader": "^0.24.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2"
+  }
+}
