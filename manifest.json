@@ -1,16 +1,35 @@
 {
     "manifest_version": 2,
 
-    "name": "Getting started example",
-    "description": "The extension description",
-    "version": "1.0",
+    "name": "Rutracker.net fixer",
+    "description": "Fix the Rutracker.net reverse",
+    "version": "0.0.1",
 
-    "browser_action": {
-        "default_icon": "icon.png",
-        "default_popup": "popup.html",
-        "default_title": "Chrome Extension"
-    },
     "permissions": [
-        "activeTab"
+        "http://rutracker.net/*/*",
+        "https://rutracker.net/*/*"
+    ],
+
+    "background" : {
+        "scripts": ["./dist/background.js"],
+        "persistent": false
+    },
+
+    "icons": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+    },
+    "page_action": {
+        "default_icon": "icon.png",
+        "default_title": "Rutracker fixer"
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["http://rutracker.net/*", "https://rutracker.net/*"],
+            "js": ["./dist/content.js"]
+        }
     ]
+
 }

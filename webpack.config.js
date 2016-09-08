@@ -1,8 +1,15 @@
+var webpack = require('webpack');
+var minify = process.argv.indexOf('--minify') !== -1
+var pluginList = []
+
+if (minify) {
+    pluginList.push(new webpack.optimize.UglifyJsPlugin())
+}
+
 module.exports = {
     entry: {
-        popup: './src/popup',
-        content: './src/content_scripts',
-        background: './src/background'
+        background: './src/background',
+        content: './src/content'
     },
     module: {
         loaders: [
@@ -12,5 +19,6 @@ module.exports = {
     output: {
         filename: "[name].js",
         path: "./dist",
-    }
+    },
+    plugins: pluginList
 }
